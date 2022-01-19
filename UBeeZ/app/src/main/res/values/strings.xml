@@ -1,0 +1,11 @@
+<resources>
+    <!-- Common -->
+    <string name="app_name">UBeeZ</string>
+
+    <!-- SharedPreference file -->
+    <string name="preference_filename">config</string>
+    <string name="preference_BLE_addr">BLE_address</string>
+
+    <string name="BLE_device_name">UBeeZ</string>
+    <string name="sync_delay">Délai de synchronisation</string>
+</resources>

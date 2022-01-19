@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryLight"
+    tools:context=".StatusFragment" >
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fragment_status_telemetry_cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/fragment_status_telemetry_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimaryDark"
+                        android:padding="8dp"
+                        android:text="Télémétrie"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/fragment_status_telemetry_status_service_textview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:text="Service de télémétrie :"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_service_progressbar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_status_telemetry_title" />
+
+                    <ProgressBar
+                        android:id="@+id/fragment_status_telemetry_status_service_progressbar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:indeterminate="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_service_textview"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_service_imageview"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_service_textview" />
+
+                    <ImageView
+                        android:id="@+id/fragment_status_telemetry_status_service_imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_service_textview"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_service_textview"
+                        app:srcCompat="@mipmap/ic_not_ok" />
+
+                    <TextView
+                        android:id="@+id/fragment_status_telemetry_status_temperature_1_textview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:text="Température 1 :"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_temperature_1_progressbar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_status_telemetry_status_service_textview" />
+
+                    <ProgressBar
+                        android:id="@+id/fragment_status_telemetry_status_temperature_1_progressbar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:indeterminate="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_temperature_1_textview"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_temperature_1_imageview"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_temperature_1_textview" />
+
+                    <ImageView
+                        android:id="@+id/fragment_status_telemetry_status_temperature_1_imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_temperature_1_textview"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_temperature_1_textview"
+                        app:srcCompat="@mipmap/ic_not_ok" />
+
+                    <TextView
+                        android:id="@+id/fragment_status_telemetry_status_temperature_2_textview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:text="Température 2 :"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_temperature_2_progressbar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_status_telemetry_status_temperature_1_textview" />
+
+                    <ProgressBar
+                        android:id="@+id/fragment_status_telemetry_status_temperature_2_progressbar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:indeterminate="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_temperature_2_textview"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_temperature_2_imageview"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_temperature_2_textview" />
+
+                    <ImageView
+                        android:id="@+id/fragment_status_telemetry_status_temperature_2_imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_temperature_2_textview"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_temperature_2_textview"
+                        app:srcCompat="@mipmap/ic_not_ok" />
+
+                    <TextView
+                        android:id="@+id/fragment_status_telemetry_status_temperature_3_textview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:text="Température 3 :"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_temperature_3_progressbar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_status_telemetry_status_temperature_2_textview" />
+
+                    <ProgressBar
+                        android:id="@+id/fragment_status_telemetry_status_temperature_3_progressbar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:indeterminate="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_temperature_3_textview"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_temperature_3_imageview"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_temperature_3_textview" />
+
+                    <ImageView
+                        android:id="@+id/fragment_status_telemetry_status_temperature_3_imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_temperature_3_textview"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_temperature_3_textview"
+                        app:srcCompat="@mipmap/ic_not_ok" />
+
+                    <TextView
+                        android:id="@+id/fragment_status_telemetry_status_temperature_4_textview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:text="Température 4 :"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_temperature_4_progressbar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_status_telemetry_status_temperature_3_textview" />
+
+                    <ProgressBar
+                        android:id="@+id/fragment_status_telemetry_status_temperature_4_progressbar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:indeterminate="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_temperature_4_textview"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_temperature_4_imageview"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_temperature_4_textview" />
+
+                    <ImageView
+                        android:id="@+id/fragment_status_telemetry_status_temperature_4_imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_temperature_4_textview"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_temperature_4_textview"
+                        app:srcCompat="@mipmap/ic_not_ok" />
+
+                    <TextView
+                        android:id="@+id/fragment_status_telemetry_status_humidity_1_textview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:text="Humidité 1 :"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_humidity_1_progressbar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_status_telemetry_status_temperature_4_textview" />
+
+                    <ProgressBar
+                        android:id="@+id/fragment_status_telemetry_status_humidity_1_progressbar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:indeterminate="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_humidity_1_textview"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_humidity_1_imageview"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_humidity_1_textview" />
+
+                    <ImageView
+                        android:id="@+id/fragment_status_telemetry_status_humidity_1_imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_humidity_1_textview"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_humidity_1_textview"
+                        app:srcCompat="@mipmap/ic_not_ok" />
+
+                    <TextView
+                        android:id="@+id/fragment_status_telemetry_status_humidity_2_textview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:text="Humidité 2 :"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_humidity_2_progressbar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_status_telemetry_status_humidity_1_textview" />
+
+                    <ProgressBar
+                        android:id="@+id/fragment_status_telemetry_status_humidity_2_progressbar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:indeterminate="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_humidity_2_textview"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_humidity_2_imageview"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_humidity_2_textview" />
+
+                    <ImageView
+                        android:id="@+id/fragment_status_telemetry_status_humidity_2_imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_humidity_2_textview"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_humidity_2_textview"
+                        app:srcCompat="@mipmap/ic_not_ok" />
+
+                    <TextView
+                        android:id="@+id/fragment_status_telemetry_status_battery_textview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:text="Batterie :"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_battery_imageview"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_status_telemetry_status_humidity_2_textview" />
+
+                    <ProgressBar
+                        android:id="@+id/fragment_status_telemetry_status_battery_progressbar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:indeterminate="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_battery_textview"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_battery_imageview"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_battery_textview" />
+
+                    <ImageView
+                        android:id="@+id/fragment_status_telemetry_status_battery_imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_battery_textview"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_battery_textview"
+                        app:srcCompat="@mipmap/ic_not_ok" />
+
+                    <TextView
+                        android:id="@+id/fragment_status_telemetry_status_weight_textview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:text="Poids :"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_weight_imageview"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_status_telemetry_status_battery_textview" />
+
+                    <ProgressBar
+                        android:id="@+id/fragment_status_telemetry_status_weight_progressbar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:indeterminate="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_weight_textview"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_weight_imageview"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_weight_textview" />
+
+                    <ImageView
+                        android:id="@+id/fragment_status_telemetry_status_weight_imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_weight_textview"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_weight_textview"
+                        app:srcCompat="@mipmap/ic_not_ok" />
+
+                    <TextView
+                        android:id="@+id/fragment_status_telemetry_status_light_textview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:text="Luminosité :"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_light_imageview"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_status_telemetry_status_weight_textview" />
+
+                    <ProgressBar
+                        android:id="@+id/fragment_status_telemetry_status_light_progressbar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:indeterminate="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_light_textview"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_telemetry_status_light_imageview"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_light_textview" />
+
+                    <ImageView
+                        android:id="@+id/fragment_status_telemetry_status_light_imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_telemetry_status_light_textview"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_telemetry_status_light_textview"
+                        app:srcCompat="@mipmap/ic_not_ok" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/fragment_status_configuration_cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp">
+
+                    <TextView
+                        android:id="@+id/fragment_status_configuration_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/colorPrimaryDark"
+                        android:padding="8dp"
+                        android:text="Configuration"
+                        android:textColor="@color/white"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/fragment_status_configuration_status_service_textview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:text="Service de configuration :"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_configuration_status_service_progressbar"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_status_configuration_title" />
+
+                    <ProgressBar
+                        android:id="@+id/fragment_status_configuration_status_service_progressbar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:indeterminate="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_configuration_status_service_textview"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_configuration_status_service_imageview"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_configuration_status_service_textview" />
+
+                    <ImageView
+                        android:id="@+id/fragment_status_configuration_status_service_imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_configuration_status_service_textview"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_configuration_status_service_textview"
+                        app:srcCompat="@mipmap/ic_not_ok" />
+
+                    <TextView
+                        android:id="@+id/fragment_status_configuration_status_delay_textview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:text="Délai de synchronisation :"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_configuration_status_delay_imageview"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_status_configuration_status_service_textview" />
+
+                    <ProgressBar
+                        android:id="@+id/fragment_status_configuration_status_delay_progressbar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:indeterminate="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_configuration_status_delay_textview"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_configuration_status_delay_imageview"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_configuration_status_delay_textview" />
+
+                    <ImageView
+                        android:id="@+id/fragment_status_configuration_status_delay_imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_configuration_status_delay_textview"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_configuration_status_delay_textview"
+                        app:srcCompat="@mipmap/ic_not_ok" />
+
+                    <TextView
+                        android:id="@+id/fragment_status_configuration_status_location_textview"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingTop="4dp"
+                        android:paddingBottom="4dp"
+                        android:text="Localisation :"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_configuration_status_location_imageview"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/fragment_status_configuration_status_delay_textview" />
+
+                    <ProgressBar
+                        android:id="@+id/fragment_status_configuration_status_location_progressbar"
+                        style="?android:attr/progressBarStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:indeterminate="true"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_configuration_status_location_textview"
+                        app:layout_constraintEnd_toStartOf="@+id/fragment_status_configuration_status_location_imageview"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_configuration_status_location_textview" />
+
+                    <ImageView
+                        android:id="@+id/fragment_status_configuration_status_location_imageview"
+                        android:layout_width="wrap_content"
+                        android:layout_height="0dp"
+                        android:layout_marginEnd="8dp"
+                        android:adjustViewBounds="true"
+                        android:cropToPadding="true"
+                        android:visibility="visible"
+                        app:layout_constraintBottom_toBottomOf="@+id/fragment_status_configuration_status_location_textview"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/fragment_status_configuration_status_location_textview"
+                        app:srcCompat="@mipmap/ic_not_ok" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

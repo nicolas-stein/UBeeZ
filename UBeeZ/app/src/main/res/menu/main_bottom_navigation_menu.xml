@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/activity_main_bottom_navigation_page_status"
+        android:enabled="true"
+        android:icon="@drawable/ic_checklist_selector"
+        android:title="Statut" />
+    <item
+        android:id="@+id/activity_main_bottom_navigation_page_data"
+        android:enabled="true"
+        android:icon="@drawable/ic_graph_selector"
+        android:title="Données" />
+    <item
+        android:id="@+id/activity_main_bottom_navigation_page_settings"
+        android:enabled="true"
+        android:icon="@drawable/ic_settings_selector"
+        android:title="Paramètres" />
+</menu>
